@@ -1,4 +1,3 @@
-#!/bin/bash
 
 
 PROJECT="rstudio_rockr.simg"
@@ -37,7 +36,7 @@ function stop_infrastructure () {
 }
 
 function run_image () {
-    PROJECT_FOLDER=$1
+    PROJECT_FOLDER=$HOME
     PASSWORD=$PASSWORD singularity exec -B ${HOME}:/mnt \
         ${PROJECT} rserver --auth-none=0 \
         --auth-pam-helper-path=pam-helper \
