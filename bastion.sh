@@ -1,5 +1,6 @@
 
-
+# MNT_PATH is the path you want to mount to the RSession
+MNT_PATH=''
 PROJECT="rstudio_rockr.simg"
 PASSWORD='PULANSKIATNIGHT'
 
@@ -37,7 +38,7 @@ function stop_infrastructure () {
 
 function run_image () {
     PROJECT_FOLDER=$HOME
-    PASSWORD=$PASSWORD singularity exec -B ${HOME}:/mnt \
+    PASSWORD=$PASSWORD singularity exec -B ${MNT_PATH}:/mnt \
         ${PROJECT} rserver --auth-none=0 \
         --auth-pam-helper-path=pam-helper \
         --www-address=127.0.0.1 #localhost
