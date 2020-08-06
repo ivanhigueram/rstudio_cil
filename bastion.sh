@@ -44,7 +44,7 @@ function run_image () {
 }
 
 function all () {
-	start
+	start_infrastructure
 	run_image
 }
 
@@ -67,6 +67,10 @@ case "$1" in
         run_image
 		shift
         ;;
+    all)
+        all
+                shift
+       ;;
     -h|--help)
         help_menu
                 shift
